@@ -151,6 +151,10 @@ figure img {
   transition: 0.5s;
 }
 
+.img:hover{
+  transform: scale(1.050);
+}
+
 #evolucao figcaption {
   font-weight: 600;
   font-size: 20px;

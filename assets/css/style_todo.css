@@ -1,0 +1,20 @@
+header,
+main,
+footer {
+    display: grid;
+    grid-template-rows: 1fr;
+    gap: 20px;
+    margin: 20px;
+}
+body{
+    background-color: #f4f4f4;
+}
+footer, 
+header {
+    background-color: #333;
+}
+h1 {
+    text-align: center;
+    padding: 20px;
+    font-size: 24px;
+}

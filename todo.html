@@ -14,19 +14,23 @@
     </header>
     <main>
         <section>
-            <form onsubmit="callTask()">
-                <input type="text" name="task" id="todo-input" placeholder="Enter with a task">
-                <button type="submit">Enviar</button>
-            </form>
+            <div class="form-container">
+                <form onsubmit="callTask(event)">
+                    <input type="text" name="task" id="todo-input" placeholder="Enter with a task">
+                    <button type="submit">Send</button>
+                </form>
+            </div>
+            <ul id="task-list"></ul>
         </section>
     </main>
-    <footer>
-        <div>
-            <p>
-                EADAWDAWDAWDAWDW
-            </p>
-        </div>
-    </footer>
+    <footer aria-label="Rodapé">
+        <p aria-label="Copyright">
+          &copy; 2024 Todo List
+        </p>
+        <p></p>
+      </footer>
+    <script src="./assets/js/visitorCount.js"></script>
+    <script src="./assets/js/todo.js"></script>
 </body>
 
 </html>

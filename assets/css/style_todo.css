@@ -9,8 +9,8 @@ figure,
 table,
 th,
 td {
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
 body {
@@ -20,13 +20,45 @@ body {
     min-height: 100vh;
 }
 
-header, main, footer {
+li{
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 10px;
+    margin: 10px;
+}
+
+.title-bold {
+    font-family: Arial, sans-serif;
+    font-size: 40px;
+    color: #333;
+    font-weight: bold;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #0074d9;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+header,
+main,
+footer {
     display: grid;
     grid-template-rows: 1fr;
     gap: 20px;
 }
 
-footer, header {
+footer,
+header {
     background-color: #333;
     color: #fff;
     padding: 20px;
@@ -42,14 +74,43 @@ h1 {
 
 .form-container {
     display: flex;
-    justify-content: center; 
-    gap: 10px; 
-    margin: 20px;
+    justify-content: center;
+    gap: 10px;
+    margin: 10px;
+}
+
+.form-container input {
+    display: flex;
+    padding: 10px;
+    margin: 10px;
+    width: 78%;
+    font-family: Arial, sans-serif;
+}
+
+textarea {
+    display: flex;
+    height: auto;
+    padding: 11px;
+    margin: 10px;
+    width: 78%;
+    font-family: Arial, sans-serif;
+}
+
+button {
+    padding: 10px;
+    margin: 10px;
+    margin-top: 0px;
+    background-color: #0074d9;
+    float: inline-end;
+    margin-right: 57px;
+    color: white;
+    border: none;
 }
 
 #task-list li {
     display: block;
     padding-left: 05px;
+    padding: 20px;
 }
 
 footer {

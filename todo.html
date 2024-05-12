@@ -16,8 +16,9 @@
         <section>
             <div class="form-container">
                 <form onsubmit="callTask(event)">
-                    <input type="text" name="task" id="todo-input" placeholder="Enter with a task">
-                    <button type="submit">Send</button>
+                    <input type="text" name="task" id="todo-name" placeholder="Informe o título da tarefa"></input>
+                    <textarea name="todo-description" id="todo-description" placeholder="Informe a descrição da tarefa"></textarea>
+                    <button type="submit">Salvar Tarefa</button>
                 </form>
             </div>
             <ul id="task-list"></ul>

@@ -1,38 +1,54 @@
-// Função para adicionar uma tarefa
 function callTask(event) {
     event.preventDefault();
 
-    var taskInput = document.getElementById('todo-input');
+    var taskInput = document.getElementById('todo-name');
+    var descriptionInput = document.getElementById('todo-description');
     var taskText = taskInput.value.trim();
+    var descriptionText = descriptionInput.value.trim();
 
-    if (taskText !== '') {
+    if (taskText !== '' && descriptionText !== '') {
         var tasks = JSON.parse(localStorage.getItem('tasks')) || [];
-        tasks.push(taskText);
-        localStorage.setItem('tasks', JSON.stringify(tasks));
-        taskInput.value = '';
 
-        // Atualizar a lista de tarefas na página
-        updateTaskList();
+        var newTask = {
+            task: taskText,
+            description: descriptionText
+        };
+
+        tasks.push(newTask);
+
+        localStorage.setItem('tasks', JSON.stringify(tasks));
+
+        taskInput.value = '';
+        descriptionInput.value = '';
+
+        displayTasks();
     }
 }
 
-// Função para atualizar a lista de tarefas na página
-function updateTaskList() {
+function displayTasks() {
     var tasks = JSON.parse(localStorage.getItem('tasks')) || [];
     var taskList = document.getElementById('task-list');
 
-    // Limpar a lista atual
     taskList.innerHTML = '';
 
-    // Adicionar cada tarefa à lista
     tasks.forEach(function(task) {
         var listItem = document.createElement('li');
-        listItem.textContent = task;
+        var taskTitle = document.createElement('span'); // Cria um elemento span para o título
+        var descriptionText = document.createTextNode(task.description);
+        
+        // Configura o texto do título
+        taskTitle.textContent = task.task + ':';
+        taskTitle.className = 'title-bold'; // Adiciona a classe CSS
+        
+        // Insere o título e a quebra de linha
+        listItem.appendChild(taskTitle);
+        listItem.appendChild(document.createElement('br')); // Adiciona a quebra de linha
+        listItem.appendChild(descriptionText);
+
         taskList.appendChild(listItem);
     });
 }
 
-// Carregar tarefas existentes quando a página é carregada
-document.addEventListener('DOMContentLoaded', function() {
-    updateTaskList();
-});
+window.onload = function() {
+    displayTasks();
+};

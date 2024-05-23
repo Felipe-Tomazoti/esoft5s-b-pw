@@ -118,3 +118,15 @@ footer {
     background-color: #343a40;
     padding: 20px;
 }
+
+.divClass{
+    position: relative;
+}
+
+.buttonClass{
+    background-color: black;
+    position: absolute;
+    cursor: pointer;
+    bottom: 50px;
+    left: 50px;
+}

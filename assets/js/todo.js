@@ -1,3 +1,8 @@
+function callDialog() {
+    console.log('Teste')
+    // CRIAR O DIALOG
+}
+
 function callTask(event) {
     event.preventDefault();
 
@@ -31,24 +36,27 @@ function displayTasks() {
 
     taskList.innerHTML = '';
 
-    tasks.forEach(function(task) {
+    tasks.forEach(function (task) {
         var listItem = document.createElement('li');
         var taskTitle = document.createElement('span'); // Cria um elemento span para o título
         var descriptionText = document.createTextNode(task.description);
-        
-        // Configura o texto do título
+        var buttonTask = document.createElement('button')
+        buttonTask.classList.add('buttonClass')
+        buttonTask.textContent = '✏️';
+        buttonTask.title = 'Editar tarefa'
+        buttonTask.onclick = () => {
+            callDialog();
+        }
         taskTitle.textContent = task.task + ':';
         taskTitle.className = 'title-bold'; // Adiciona a classe CSS
-        
-        // Insere o título e a quebra de linha
         listItem.appendChild(taskTitle);
         listItem.appendChild(document.createElement('br')); // Adiciona a quebra de linha
         listItem.appendChild(descriptionText);
-
+        listItem.appendChild(buttonTask)
         taskList.appendChild(listItem);
     });
 }
 
-window.onload = function() {
+window.onload = function () {
     displayTasks();
 };

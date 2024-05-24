@@ -20,7 +20,7 @@ body {
     min-height: 100vh;
 }
 
-li{
+li {
     border: 1px solid #ccc;
     border-radius: 5px;
     padding: 20px;
@@ -119,14 +119,46 @@ footer {
     padding: 20px;
 }
 
-.divClass{
+.divClass {
     position: relative;
 }
 
-.buttonClass{
+.buttonClass {
     background-color: black;
     position: absolute;
     cursor: pointer;
-    bottom: 50px;
-    left: 50px;
+    right: -35px;
+    margin-top: -50px;
+}
+.buttonClass:hover{
+	background-color: black;
+}
+
+#edit-dialog{
+    margin-right: 230px;
+    padding: 15px;
+    margin-left: 80px;
+}
+
+#cancel-dialog{
+    margin-right: -280px;
+    padding: 15px;
+}
+
+dialog form {
+    display: flex;
+    flex-direction: column;
+}
+
+dialog input,
+dialog textarea {
+    margin: 0;
+    padding-top: 20px; 
+    padding: 11px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+dialog textarea {
+    resize: vertical;
 }

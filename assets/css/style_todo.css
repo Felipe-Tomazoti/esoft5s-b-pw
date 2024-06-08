@@ -109,7 +109,7 @@ button {
 
 #task-list li {
     display: block;
-    padding-left: 05px;
+    padding-left: 5px;
     padding: 20px;
 }
 
@@ -127,20 +127,35 @@ footer {
     background-color: black;
     position: absolute;
     cursor: pointer;
-    right: -35px;
+    right: 30px;
     margin-top: -50px;
 }
-.buttonClass:hover{
-	background-color: black;
+
+.buttonClass:hover {
+    background-color: black;
 }
 
-#edit-dialog{
+.deleteButtonClass {
+    background-color: red;
+    position: absolute;
+    cursor: pointer;
+    right: -5px;
+    margin-top: -50px;
+    margin-right: 35px;
+    background-color: black;
+}
+
+.deleteButtonClass:hover {
+    background-color: darkred;
+}
+
+#edit-dialog {
     margin-right: 230px;
     padding: 15px;
     margin-left: 80px;
 }
 
-#cancel-dialog{
+#cancel-dialog {
     margin-right: -280px;
     padding: 15px;
 }
@@ -153,7 +168,7 @@ dialog form {
 dialog input,
 dialog textarea {
     margin: 0;
-    padding-top: 20px; 
+    padding-top: 20px;
     padding: 11px;
     width: 100%;
     box-sizing: border-box;

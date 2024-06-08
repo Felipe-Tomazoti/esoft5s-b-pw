@@ -69,6 +69,13 @@ function updateTask(taskIndex, updatedTask, updatedDescription) {
     displayTasks();
 }
 
+function deleteTask(taskIndex) {
+    var tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+    tasks.splice(taskIndex, 1);
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+    displayTasks();
+}
+
 function displayTasks() {
     var tasks = JSON.parse(localStorage.getItem('tasks')) || [];
     var taskList = document.getElementById('task-list');
@@ -80,6 +87,7 @@ function displayTasks() {
         var taskTitle = document.createElement('span');
         var descriptionText = document.createTextNode(task.description);
         var buttonTask = document.createElement('button');
+        var buttonDelete = document.createElement('button');
 
         buttonTask.classList.add('buttonClass');
         buttonTask.textContent = '✏️';
@@ -88,12 +96,20 @@ function displayTasks() {
             callDialog(index, task.task, task.description);
         };
 
+        buttonDelete.classList.add('deleteButtonClass');
+        buttonDelete.textContent = '❌';
+        buttonDelete.title = 'Excluir tarefa';
+        buttonDelete.onclick = () => {
+            deleteTask(index);
+        };
+
         taskTitle.textContent = task.task + ':';
         taskTitle.className = 'title-bold';
         listItem.appendChild(taskTitle);
         listItem.appendChild(document.createElement('br'));
         listItem.appendChild(descriptionText);
         listItem.appendChild(buttonTask);
+        listItem.appendChild(buttonDelete);
         taskList.appendChild(listItem);
     });
 }
